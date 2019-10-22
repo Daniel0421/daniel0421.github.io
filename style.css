@@ -1,0 +1,32 @@
+body {
+    background-color: #eae7dc;
+}
+h1 {
+    color: #e8584f;
+}
+h2 {
+    color: #e98074;
+}
+h3 {
+    color: #e98074;
+}
+h4 {
+    color: #8e8d8a;
+}
+h5 {
+    color: #8e8d8a;
+}
+p {
+    color: #d8c385;
+}
+a:visited {
+    color: #8e8d8a;
+    text-decoration: none;
+}
+a:link {
+    color: #8e8d8a;
+    text-decoration: none;
+}
+a:hover {
+    font-weight: bold;
+}
