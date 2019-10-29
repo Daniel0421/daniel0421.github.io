@@ -6,6 +6,9 @@ body {
 header {
     text-align: center;
 }
+nav {
+    text-align: center;
+}
 header h1 {
     font-size: 4em;
 }
