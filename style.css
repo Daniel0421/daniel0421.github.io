@@ -6,11 +6,19 @@ body {
 header {
     text-align: center;
 }
-nav {
-    text-align: center;
-}
 header h1 {
-    font-size: 4em;
+    font-size: 3em;
+}
+section div {
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+}
+section div:hover {
+    background-color: black;
+}
+footer {
+    text-align: center;
 }
 h1 {
     color: #e8584f;
@@ -30,6 +38,9 @@ h5 {
 }
 p {
     color: #d8c385;
+}
+span {
+    font-weight: bold;
 }
 a:visited {
     color: #8e8d8a;
