@@ -10,12 +10,10 @@ header h1 {
     font-size: 3em;
 }
 section div {
-    border-style: solid;
-    border-color: red;
     border-width: 1px;
 }
 section div:hover {
-    background-color: black;
+    background-color: rgba(128, 128, 128, 0.555);
 }
 footer {
     text-align: center;
@@ -42,6 +40,12 @@ p {
 span {
     font-weight: bold;
 }
+#back {
+    color: #8e8d8a;
+}
+.home {
+    text-decoration: none;
+}
 a:visited {
     color: #8e8d8a;
     text-decoration: none;
@@ -52,4 +56,5 @@ a:link {
 }
 a:hover {
     font-weight: bold;
+    color: white;
 }
