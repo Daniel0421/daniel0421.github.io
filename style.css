@@ -4,7 +4,7 @@ body {
     background-color: #eae7dc;
 }
 header h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     text-align: center;
 }
 section div {
@@ -13,6 +13,10 @@ section div {
 section div:hover {
     background-color: rgba(128, 128, 128, 0.555);
 }
+nav div {
+    border-width: 50px;
+    background-color: #e98074;
+}
 footer {
     text-align: center;
 }
@@ -20,9 +24,11 @@ h1 {
     color: #e8584f;
     
 }
-h2,
-h3 {
+h2 {
     color: #e98074;
+}
+h3 {
+    color: gray;
     
 }
 h4 {
@@ -34,14 +40,21 @@ h5 {
 p {
     color: #d8c385;
 }
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    font-size: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 span {
     font-weight: bold;
 }
 #back {
     color: #8e8d8a;
-}
-.home {
-    text-decoration: none;
 }
 a:visited,
 a:link {
