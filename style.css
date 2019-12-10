@@ -40,6 +40,9 @@ h5 {
 p {
     color: #d8c385;
 }
+ul {
+    font-size: 1.25em;
+}
 .flex {
     display: flex;
     flex-direction: row;
@@ -52,6 +55,7 @@ p {
 }
 span {
     font-weight: bold;
+    color: #e8584f;
 }
 #back {
     color: #8e8d8a;
