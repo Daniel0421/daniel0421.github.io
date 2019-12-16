@@ -30,3 +30,15 @@ nav div {
 section {
     text-align: center;
 }
+.columns2 {
+    display: flex;
+    text-align: left;
+    justify-content: space-around;
+}
+.pSpace {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+p {
+    text-align: center;
+}
