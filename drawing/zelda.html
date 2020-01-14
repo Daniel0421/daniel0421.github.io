@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <title>The Legend of Zelda</title>
+        <script>
+            var canvas;
+            var ctx;
+            const UNIT = 25;
+            window.onload = init;
+            function init() {
+                setupCanvas();
+                drawBackground("grey","white");
+                // drawZelda("default");
+                // drawZelda("walk1")
+                drawZelda("walk2")
+                drawRuler(1);
+            }
+            function setupCanvas() {
+                canvas = document.getElementById("myCanvas");
+                ctx = canvas.getContext("2d");
+            }
+        </script>
+        <script src="drawRuler.js"></script>
+        <script src="drawZelda.js"></script>
+        <script src="drawingBackground.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <a href="drawing.html">Back to drawing</a>
+        </nav>
+
+        <header>
+            <h1>The Legend of Zelda</h1>
+        </header>
+
+        <section>
+            <canvas id="myCanvas" width="1400" height="600">
+        </section>
+    </body>
+</html>
