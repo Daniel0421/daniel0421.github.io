@@ -204,15 +204,25 @@ function drawClothes2() {
     ctx.fillStyle = "#EF9C4E"
     ctx.fillRect(8* UNIT,8* UNIT,2* UNIT,3* UNIT)
     ctx.fillRect(7* UNIT,9* UNIT,2* UNIT,3* UNIT)
+    ctx.fillRect(12* UNIT,9* UNIT,1* UNIT,2* UNIT)
     ctx.fillStyle = "#BA5425"
+    ctx.fillRect(3* UNIT,10* UNIT,4* UNIT,3* UNIT)
+    ctx.fillRect(2* UNIT,10* UNIT,1* UNIT,2* UNIT)
+    ctx.fillRect(3* UNIT,9* UNIT,2* UNIT,1* UNIT)
+    ctx.fillRect(10* UNIT,9* UNIT,2* UNIT,1* UNIT)
+    ctx.fillRect(11* UNIT,10* UNIT,1* UNIT,2* UNIT)
+    ctx.fillRect(7* UNIT,13* UNIT,4* UNIT,1* UNIT)
+    ctx.fillRect(10* UNIT,12* UNIT,1* UNIT,1* UNIT)
 }
 function drawFeet2() {
-    ctx.fillStyle = "#93CE42"
-    ctx.fillStyle = "#EF9C4E"
     ctx.fillStyle = "#BA5425"
+    ctx.fillRect(0,13* UNIT,2* UNIT,2* UNIT)
+    ctx.fillRect(1* UNIT,14* UNIT,2* UNIT,2* UNIT)
+    ctx.fillRect(3* UNIT,15* UNIT,1* UNIT,1* UNIT)
+    ctx.fillRect(11* UNIT,14* UNIT,2* UNIT,1* UNIT)
+    ctx.fillRect(9* UNIT,15* UNIT,3* UNIT,1* UNIT)
 }
 function drawShield2() {
-    ctx.fillStyle = "#93CE42"
-    ctx.fillStyle = "#EF9C4E"
     ctx.fillStyle = "#BA5425"
+    ctx.fillRect(13* UNIT,7* UNIT,1* UNIT,7* UNIT)
 }
