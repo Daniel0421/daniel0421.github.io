@@ -10,11 +10,13 @@
             window.onload = init;
             function init() {
                 setupCanvas();
-                drawBackground("grey","white");
-                // drawZelda("default");
-                // drawZelda("walk1")
-                drawZelda("walk2")
-                drawRuler(1);
+                drawBackground("skyblue","lightgreen");
+                drawZelda("default",1,14,0);
+                drawZelda("walk",1,28,0)
+                drawZelda("walk",2,43,0)
+                drawZelda("jump",1,0,0)
+                drawName(0,17);
+                // drawRuler(1);
             }
             function setupCanvas() {
                 canvas = document.getElementById("myCanvas");
@@ -24,11 +26,15 @@
         <script src="drawRuler.js"></script>
         <script src="drawZelda.js"></script>
         <script src="drawingBackground.js"></script>
+        <script src="drawZelda.js"></script>
+        <script src="drawName.js"></script>
     </head>
 
     <body>
         <nav>
-            <a href="drawing.html">Back to drawing</a>
+            <a id="back" href="drawing.html">Back to drawing</a>
+            <br>
+            <a id="back" href="../index.html">Back to home</a>
         </nav>
 
         <header>
@@ -36,7 +42,7 @@
         </header>
 
         <section>
-            <canvas id="myCanvas" width="1400" height="600">
+            <canvas id="myCanvas" width="1422" height="600">
         </section>
     </body>
 </html>

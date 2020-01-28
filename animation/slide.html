@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slides</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        var canvas;
+        var ctx;
+        var requestId;
+        var positionX = 0;
+        const UNIT = 10;
+        window.onload = init
+        function init() {
+            setup();
+            // Provide a unique ID for the new frame in animation by
+            // calling the animationLoop function
+            requestId = requestAnimationFrame(animationLoop);
+        }
+        function setup() {
+            canvas = document.getElementById("myCanvas");
+            ctx = canvas.getContext("2d");
+        }
+        // The function that repeats forever to animate in the canvas
+        function animationLoop() {
+            // Erase everything from the canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            drawBackground("skyblue","lightgreen");
+            incrementPositionX();
+            drawZelda("jump",2, positionX,3.6*UNIT);
+            requestId = requestAnimationFrame(animationLoop);
+        }
+        function incrementPositionX() {
+            // positionX's value is increased by 1
+            positionX += 1;
+        }
+    </script>
+    <script src="../drawing/drawZelda.js"></script>
+    <script src="../drawing/drawingBackground.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">Back to home</a>
+        <br>
+        <a href="animation.html">Back to animation</a>
+    </nav>
+
+    <header>
+        <h1>Slides</h1>
+        <canvas id="myCanvas" height="600" width="1422"></canvas>
+    </header>
+
+    <section>
+
+    </section>
+
+    <footer>
+        <p>&copy;2020</p>
+    </footer>
+</body>
+
+</html>

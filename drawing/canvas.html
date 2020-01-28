@@ -20,34 +20,21 @@
             canvas = document.getElementById("myCanvas");   // Connecting th HTML elememnt that has ID of "myCanvas".
             ctx = canvas.getContext("2d");  // Setting the context of the canvas to  2D.
         }
-        function drawFace() {
-            ctx.fillStyle = "yellow";
-            ctx.fillRect(0, 0, 500, 500);
-        }
-        function drawEyes() {
-            ctx.fillStyle = "black";
-            ctx.fillRect(75, 75, 75, 75);
-            ctx.fillRect(350, 75, 75, 75);
-        }
-        function drawMouth() {
-            ctx.fillStyle = "black";
-            ctx.fillRect(75, 275, 75, 150);
-            ctx.fillRect(150, 350, 275, 75);
-            ctx.fillRect(350, 275, 75, 150);
-        }
     </script>
 </head>
 
 <nav>
-    <a href="drawing.html">Back to drawing</a>
+    <a id="back" href="drawing.html">Back to drawing</a>
+    <br>
+    <a id="back" href="../index.html">Back to home</a>
 </nav>
 
-<head>
+<header>
     <h1>Canvas</h1>
-</head>
+</header>
 
 <section>
-    <canvas id="myCanvas" height="600" width="1400"></canvas>
+    <canvas id="myCanvas" height="600" width="1422"></canvas>
 </section>
 
 <footer>
