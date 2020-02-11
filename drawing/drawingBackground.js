@@ -5,5 +5,5 @@ function drawBackground(backgroundColour, floorColour) {
 }
 function drawFloor(floorColour) {
     ctx.fillStyle = floorColour;
-    ctx.fillRect(0,canvas.height-8*UNIT,canvas.width,10*UNIT)
+    ctx.fillRect(0,canvas.height-8*UNIT,canvas.width,10*UNIT);
 }

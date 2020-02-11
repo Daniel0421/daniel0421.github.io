@@ -9,6 +9,17 @@
         var ctx;
         var requestId;
         var positionX = 0;
+        var cloud1PositionX = 60;
+        var cloud2PositionX = 30;
+        var cloud3PositionX = 90;
+        var cloud4PositionX = 120;
+        var cloud5PositionX = 5;
+        var zeldaIsFacingRight = true;
+        var cloud1IsFacingRight = false;
+        var cloud2IsFacingRight = false;
+        var cloud3IsFacingRight = false;
+        var cloud4IsFacingRight = false;
+        var cloud5IsFacingRight = false;
         const UNIT = 10;
         window.onload = init
         function init() {
@@ -26,28 +37,90 @@
             // Erase everything from the canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height)
             drawBackground("skyblue","lightgreen");
-            incrementPositionX();
-            drawZelda("jump",2, positionX,3.6*UNIT);
+            updatePositionX();
+            updateFacingRight();
+            animateZelda();
+            drawClouds();
+            updateCloudX();
+            animateClouds();
             requestId = requestAnimationFrame(animationLoop);
         }
-        function incrementPositionX() {
+        function updatePositionX() {
             // positionX's value is increased by 1
-            positionX += 1;
+            if (zeldaIsFacingRight) {
+                // Increment position X
+                positionX += 1;
+            } else {
+                // Decrement position X
+                positionX -= 1;
+            }
+        }
+        function updateFacingRight() {
+            if (positionX > canvas.width/UNIT + 10) {
+                zeldaIsFacingRight = false;
+            } else if (positionX < -29) {
+                zeldaIsFacingRight = true;
+            }
+        }
+        function animateZelda () {
+            if (zeldaIsFacingRight) {
+                drawZelda("jump",2, positionX,3.6*UNIT);
+            } else {
+                ctx.save();
+                ctx.scale(-1,1);
+                drawZelda("jump",2, -positionX,3.6*UNIT);
+                ctx.restore();
+            }
+        }
+        function drawClouds() {
+            drawCloud("white",cloud1PositionX,0);
+            drawCloud("white",cloud2PositionX,3);
+            drawCloud("white",cloud3PositionX,2);
+            drawCloud("white",cloud4PositionX,0);
+            drawCloud("white",cloud5PositionX,3);
+        }
+        function updateCloudX() {
+            if (cloud1IsFacingRight) {
+                cloudX +=1;
+            } else  {
+              cloudX -=1;
+            }
+            if (cloud2IsFacingRight) {
+                cloudX +=1
+            } else {
+                cloudX -=1
+            }
+            if (cloud3IsFacingRight) {
+                cloudX +=1
+            } else {
+                cloudX -=1
+            }
+            if (cloud4IsFacingRight) {
+                cloudX +=1
+            } else {
+                cloudX -=1
+            }
+            if (cloud5IsFacingRight) {
+                cloudX +=1
+            } else {
+                cloudX -=1
+            }
         }
     </script>
     <script src="../drawing/drawZelda.js"></script>
     <script src="../drawing/drawingBackground.js"></script>
+    <script src="../drawing/drawRuler.js"></script>
 </head>
 
 <body>
     <nav>
-        <a href="../index.html">Back to home</a>
-        <br>
         <a href="animation.html">Back to animation</a>
+        <br>
+        <a href="../index.html">Back to home</a>
     </nav>
 
     <header>
-        <h1>Slides</h1>
+        <h1>Slide<h1>
         <canvas id="myCanvas" height="600" width="1422"></canvas>
     </header>
 

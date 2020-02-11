@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Walk</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        var canvas;
+        var ctx;
+        var requestid;
+        var positionX = -5;
+        var cloud1PositionX = 1;
+        var time = 0;
+        const MAX_TIME = 20;
+        const UNIT = 5;
+        window.onload = init;
+        function init() {
+            setupCanvas();
+            animationLoop();
+        }
+        function setupCanvas() {
+            canvas = document.getElementById("myCanvas");
+            ctx = canvas.getContext("2d");
+        }
+        function animationLoop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBackground("skyblue","lightgreen","white");
+            updateTime();
+            updatePositionX();
+            animateZelda();
+            updateCloudX();
+            animateCloud();
+            requestid = requestAnimationFrame(animationLoop);
+        }
+        function updatePositionX() {
+            positionX += 1;
+            if (positionX > canvas.width/UNIT) {
+                positionX = -5*UNIT;
+            }
+        }
+        function updateTime() {
+            if (time < MAX_TIME) {
+                time += 1;
+            } else {
+                time = 0;
+            }
+        }
+        function animateZelda() {
+            if (0 <= time && time < MAX_TIME / 2) {
+                drawZelda("walk", 1, positionX, 96)
+            } else if (MAX_TIME / 2 <= time && time <= MAX_TIME) {
+                drawZelda("walk", 2, positionX, 96);
+            }
+        }
+        function updateCloudX() {
+            cloud1PositionX += 0.5;
+            if (cloud1PositionX > canvas.width/UNIT) {
+                cloud1PositionX = -5*UNIT;
+            }
+        }
+        function animateCloud() {
+            drawCloud("white",cloud1PositionX,1*UNIT)
+        }
+    </script>
+    <script src="../drawing/drawZelda.js"></script>
+    <script src="../drawing/drawingBackground.js"></script>
+    <script src="../drawing/drawRuler.js"></script>
+    <script src="../drawing/drawCloud.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="animation.html">Back to animation</a>
+        <br>
+        <a href="../index.html">Back to home</a>
+    </nav>
+    <header>
+        <h1>Walk</h1>
+        <canvas id="myCanvas" height="600" width="1422"></canvas>
+    </header>
+    <footer>
+        <p>&copy;2020</p>
+    </footer>
+</body>
+
+</html>
