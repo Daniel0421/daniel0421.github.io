@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jump</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        var canvas;
+        var ctx;
+        var requestid;
+        var positionX = -5;
+        var positionY = 96;
+        var cloud1PositionX = 1;
+        var cloud2PositionX = 50;
+        var cloud3PositionX = 99;
+        var cloud4PositionX = 148;
+        var cloud5PositionX = 197;
+        var cloud6PositionX = 246;
+        var Cloud7PositionX = 295;
+        var time = 0;
+        const MAX_TIME = 20;
+        const UNIT = 5;
+        const JUMP_POSITION = 100;
+        const PEAK_POSITION = 128;
+        const LAND_POSITION = 156;
+        const ACCELERATION = 1.1;
+        window.onload = init;
+        function init() {
+            setupCanvas();
+            animationLoop();
+        }
+        function setupCanvas() {
+            canvas = document.getElementById("myCanvas");
+            ctx = canvas.getContext("2d");
+        }
+        function animationLoop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBackground("skyblue","lightgreen","white");
+            updateTime();
+            updatePositionX();
+            updatePositionY();
+            updateCloudX();
+            animateCloud();
+            animateZelda();
+            // drawRuler(7);
+            requestid = requestAnimationFrame(animationLoop);
+        }
+        function updatePositionX() {
+            if (positionX > canvas.width/UNIT) {
+                positionX = -15;
+            } else {
+                positionX +=1;
+            }
+        }
+        function animateZelda() {
+            let isJumping = JUMP_POSITION <= positionX && positionX <= LAND_POSITION;
+            if (isJumping) {
+                drawZelda("jump",2,positionX,positionY)
+            } else {
+                let isFrame1 = 0 <= time && time < MAX_TIME/2
+                let isFrame2 = MAX_TIME/2 <= time && time <= MAX_TIME
+                if (isFrame1) {
+                    drawZelda("walk",1,positionX,positionY)
+                } else if (isFrame2) {
+                    drawZelda("walk",2,positionX,positionY)
+                }
+            } 
+        }
+        function updatePositionY() {
+            if ((JUMP_POSITION <= positionX) && (positionX < PEAK_POSITION)) {
+                positionY /= ACCELERATION;
+            } else if ((PEAK_POSITION <= positionX) && (positionX < LAND_POSITION)) {
+                positionY *= ACCELERATION;
+            }
+        }
+        function updateTime() {
+            if (time < MAX_TIME) {
+                time += 1;
+            } else {
+                time = 0;
+            }
+        }
+        function updateCloudX() {
+            cloud1PositionX += 0.5;
+            if (cloud1PositionX > canvas.width/UNIT) {
+                cloud1PositionX = -5*UNIT;
+            }
+            cloud2PositionX += 0.5;
+            if (cloud2PositionX > canvas.width/UNIT) {
+                cloud2PositionX = -5*UNIT
+            }
+            cloud3PositionX +=0.5;
+            if (cloud3PositionX > canvas.width/UNIT) {
+                cloud3PositionX = -5*UNIT
+            }
+            cloud4PositionX +=0.5;
+            if (cloud4PositionX > canvas.width/UNIT) {
+                cloud4PositionX = -5*UNIT
+            }
+            cloud5PositionX +=0.5;
+            if (cloud5PositionX > canvas.width/UNIT) {
+                cloud5PositionX = -5*UNIT
+            }
+            cloud6PositionX +=0.5;
+            if (cloud6PositionX > canvas.width/UNIT) {
+                cloud6PositionX =-5*UNIT
+            }
+            Cloud7PositionX +=0.5;
+            if (Cloud7PositionX >canvas.width/UNIT) {
+                Cloud7PositionX =-5*UNIT
+            }
+        }
+
+        function animateCloud() {
+            drawCloud("white",cloud1PositionX,5);
+            drawCloud("white",cloud2PositionX,7);
+            drawCloud("white",cloud3PositionX,9);
+            drawCloud("white",cloud4PositionX,11);
+            drawCloud("white",cloud5PositionX,9);
+            drawCloud("white",cloud6PositionX,7);
+            // drawCloud("white",Cloud7PositionX,5);
+        }
+    </script>
+    <script src="../drawing/drawZelda.js"></script>
+    <script src="../drawing/drawingBackground.js"></script>
+    <script src="../drawing/drawRuler.js"></script>
+    <script src="../drawing/drawCloud.js"></script>
+    <script src="../drawing/drawRuler.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="animation.html">Back to animation</a>
+        <br>
+        <a href="../index.html">Back to home</a>
+    </nav>
+    <header>
+        <h1>Jump</h1>
+        <canvas id="myCanvas" height="600" width="1422"></canvas>
+    </header>
+    <footer>
+        <p>&copy;2020</p>
+    </footer>
+</body>
+
+</html>
